@@ -1,5 +1,10 @@
-export default function App(){
-    return (
-        <h1 className="bg-red-500 text-center text-5xl">TanStack Project</h1>
-    );
+import ProductList from "./components/ProductList";
+
+
+export default function App() {
+  return <>
+  
+<ProductList/>
+  
+  </>;
 }

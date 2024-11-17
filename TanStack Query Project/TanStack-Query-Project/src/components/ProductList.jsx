@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { IdContext } from "../../context/IDContext";
 
 const retrieveProducts = async ({queryKey}) => {
   const response = await axios.get(`http://localhost:3000/${queryKey[0]}`);
@@ -8,6 +9,9 @@ const retrieveProducts = async ({queryKey}) => {
 };
 
  const ProductList = () => {
+  const {setId} = useContext(IdContext);
+  
+
   const {data:products, error, isLoading} =useQuery({
     queryKey: ["products"],
     queryFn:retrieveProducts,
@@ -23,6 +27,7 @@ const retrieveProducts = async ({queryKey}) => {
             <li key={product.id} className="flex flex-col items-center m-2 border rounded-sm">
                 <img src={product.thumbnail} alt={product.title} className="object-cover h-64 w-96  rounded-sm" />
                 <p className="text-xl my-3">{product.title}</p>
+                <button onClick={()=>setId(product.id)} className="bg-blue-100 p-2 border rounded-2xl mb-2 text-red-500 font-bold">Show Details</button>
             </li>
         ))}
     </ul>

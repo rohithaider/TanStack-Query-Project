@@ -22,7 +22,7 @@ const ProductDetails = () => {
   });
 
   if (isLoading) return <div>Fetching product details</div>;
-  if (error) return <div>An error Occured: {error.message}</div>;
+  if (error) return <div>Please click on show details to see product details</div>;
   return (
     <div className="w-1/5">
       <h1 className="text-3xl my-2">Product details</h1>

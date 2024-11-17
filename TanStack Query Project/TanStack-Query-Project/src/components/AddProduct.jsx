@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import {useMutation } from '@tanstack/react-query'
+import {useMutation, useQueryClient } from '@tanstack/react-query'
 const AddProduct = () => {
+
+    const queryClient =useQueryClient()
     const[state,setState] = useState({
         title:"",
         description:"",
@@ -11,14 +13,17 @@ const AddProduct = () => {
     })
 
     const mutation = useMutation({
-        mutationFn: (newProduct)=> axios.post('http://localhost:3000/products',newProduct)
+        mutationFn: (newProduct)=> axios.post('http://localhost:3000/products',newProduct),
+        onSuccess: ()=>{
+            queryClient.invalidateQueries(["products"])  //adding and showing data instantly
+        }
     })
 
 
     function submitData(e){
         e.preventDefault();
         const newData = { ...state, id:crypto.randomUUID().toString()}
-        mutation.mutate(newData)
+        mutation.mutate(newData)  // this is calling the mutationFn function which is getting as a object from the useMutation return
     }
 
     function handleChange(e){

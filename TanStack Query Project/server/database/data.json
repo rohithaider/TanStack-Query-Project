@@ -295,6 +295,14 @@
       "price": 31,
       "rating": 5,
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOYplN3f_3F6C4YS_t4KpQlQMOsbTbHSGD3w&s"
+    },
+    {
+      "id": "6569fcf3-de25-4b19-b3f5-6e717ef7449e",
+      "title": "sofa",
+      "description": "cozy sofa",
+      "price": 1300,
+      "rating": 5,
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8EHro8gGIc4AIo-VvI3gbbt1UtAgZs4srwA&s"
     }
   ]
 }

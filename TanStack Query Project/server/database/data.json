@@ -287,6 +287,14 @@
       "price": 3,
       "rating": 5,
       "thumbnail": "test"
+    },
+    {
+      "id": "180e09ad-ac99-44e8-a96a-2fdf77fb383c",
+      "title": "bed",
+      "description": "super cozy bed",
+      "price": 31,
+      "rating": 5,
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOYplN3f_3F6C4YS_t4KpQlQMOsbTbHSGD3w&s"
     }
   ]
 }
